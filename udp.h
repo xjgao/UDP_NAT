@@ -24,8 +24,8 @@ class UDP{
         * @param nbytes        This is the number of data bytes to be sent
         * @param flags 
         * @param to 
-        * @param addrlen       error: return -1
-        * @return ssize_t 
+        * @param addrlen       
+        * @return ssize_t      error: return -1
         */
        ssize_t create_udp_sendto(int sockfd, const void *buff, size_t nbytes, int flags, 
                                 const struct sockaddr *to, socklen_t addrlen);
