@@ -26,12 +26,12 @@ int UDP::create_udp_socket(int family, int type, int protocol){
  * @param nbytes 
  * @param to 
  * @param addrlen 
- * @return int 
+ * @return ssize_t 
  */
-ssize_t UDP::create_udp_sendto(int sockfd, const char* buff, size_t nbytes, int flags,
+ssize_t UDP::create_udp_sendto(int sockfd, const void* buff, size_t nbytes, int flags,
                           const struct sockaddr *to, socklen_t addrlen){
 
-    ssize_t send_value = sendto(sockfd, buff, nbytes, flags);
+    ssize_t send_value = sendto(sockfd, buff, nbytes, flags, to, addrlen);
     if(send_value < 0){
         return -1;
     }else{
